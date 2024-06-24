@@ -7,7 +7,7 @@ const ADD_POST = 'ADD_POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 const SET_USERS_PROFILE = 'SET_USERS_PROFILE';
 const SET_STATUS = 'SET_STATUS';
-const SET_POST_ID = 'SET_POST_ID'; // Добавляем новый action type для установки postId
+const SET_POST_ID = 'SET_POST_ID'; 
 
 type PostType = {
     id: number;
@@ -47,7 +47,7 @@ let initialState = {
     newPostText: '',
     profile: null as ProfileType | null,
     status: '',
-    postId: 0  // Ensure postId is properly initialized
+    postId: 0  
 };
 
 
@@ -77,7 +77,7 @@ const profileReducer = (state = initialState, action: ProfileActionTypes): Initi
         case SET_USERS_PROFILE:
             return { ...state, profile: action.profile };
 
-        case SET_POST_ID: // Новый case для установки postId
+        case SET_POST_ID: 
             return { ...state, postId: action.postId };
 
         default:
@@ -85,14 +85,14 @@ const profileReducer = (state = initialState, action: ProfileActionTypes): Initi
     }
 };
 
-// Action Creators
+
 export const addPostActionCreator = (newPostText: string): AddPostActionType => ({ type: ADD_POST, newPostText });
 export const updateNewPostTextActionCreator = (text: string): UpdateNewPostTextActionType => ({ type: UPDATE_NEW_POST_TEXT, newText: text });
 export const setUsersProfile = (profile: ProfileType): SetUsersProfileActionType => ({ type: SET_USERS_PROFILE, profile });
 export const setStatus = (status: string): SetStatusActionType => ({ type: SET_STATUS, status });
-export const setPostId = (postId: number): SetPostIdActionType => ({ type: SET_POST_ID, postId }); // Action Creator для установки postId
+export const setPostId = (postId: number): SetPostIdActionType => ({ type: SET_POST_ID, postId }); 
 
-// Thunk Creators
+
 export const getStatus = (userId: number): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
     profileAPI.getStatus(userId)
         .then(response => {

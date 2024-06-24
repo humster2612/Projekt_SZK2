@@ -14,7 +14,7 @@ interface DialogsState {
     dialogsData: Dialog[];
     messageData: Message[];
     newMessageAdd: string;
-    activeDialogId: string | null; // Добавлено поле для активного диалога
+    activeDialogId: string | null; 
 }
 
 interface Action {
@@ -37,10 +37,10 @@ const initialState: DialogsState = {
         { id: '4', dialogId: '2', message: 'Yoooo' }
     ],
     newMessageAdd: '',
-    activeDialogId: null // Изначально диалог не выбран
+    activeDialogId: null 
 };
 
-// Экшн-криэйторы
+
 export const updateNewMessageActionCreator = (text: string) => ({
     type: 'UPDATE_NEW_MESSAGE_TEXT',
     textmess: text
@@ -55,7 +55,7 @@ export const setActiveDialogActionCreator = (dialogId: string) => ({
     dialogId
 });
 
-// Редуктор
+
 const dialogsReducer = (state: DialogsState = initialState, action: Action) => {
     switch (action.type) {
         case 'UPDATE_NEW_MESSAGE_TEXT':

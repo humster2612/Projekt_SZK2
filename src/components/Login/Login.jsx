@@ -56,7 +56,7 @@ const Login = ({ login, isAuth }) => {
     };
 
     if (isAuth) {
-        return <Navigate to="/profile" />; // Редирект на страницу профиля после успешного логина
+        return <Navigate to="/profile" />; 
     }
 
     return <LoginReduxForm onSubmit={handleSubmit} />;

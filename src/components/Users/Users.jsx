@@ -1,5 +1,3 @@
-// Users.jsx
-
 import React from 'react';
 import styles from './users.module.css';
 import userPhoto from '../../assets/images/60af1abf02c8c-bpfull.jpg';
